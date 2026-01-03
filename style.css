@@ -350,21 +350,24 @@ input[type=range]::-webkit-slider-thumb {
     }
 
     .visual-panel {
-        flex: 8;
+        flex: none; 
+        height: 50%; 
         width: 100%;
         border-right: none;
         border-bottom: 3px solid #333;
     }
 
     .terminal-panel {
-        flex: 2;
+        flex: none;
+        height: 50%;
         width: 100%;
+        overflow: hidden;
     }
 
     .ship-container {
         width: 100px;
         height: 140px;
-        top: 40%;
+        top: 50%;
     }
     .spaceship {
         font-size: 5rem;
@@ -376,8 +379,8 @@ input[type=range]::-webkit-slider-thumb {
 
     .hud-bottom {
         height: auto;
-        min-height: 140px;
-        padding: 10px 5px;
+        min-height: 120px;
+        padding: 5px 2px;
         gap: 2px;
     }
 
@@ -389,25 +392,25 @@ input[type=range]::-webkit-slider-thumb {
     }
 
     .clock-face {
-        width: 50px;
-        height: 50px;
+        width: 45px;
+        height: 45px;
         border-width: 2px;
-        margin-bottom: 5px;
+        margin-bottom: 3px;
     }
 
     .digital-time {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
         letter-spacing: 0;
         min-height: auto;
     }
 
     .label-time {
-        font-size: 0.5rem;
+        font-size: 0.45rem;
         margin-top: 2px;
     }
 
     .diff-value {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         min-width: auto;
     }
     .diff-card {
@@ -416,33 +419,41 @@ input[type=range]::-webkit-slider-thumb {
 
     .center-warning {
         width: 85%;
-        padding: 15px;
+        padding: 10px;
         top: 35%;
     }
     .center-warning h2 {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
     .center-warning p {
-        font-size: 0.7rem;
+        font-size: 0.6rem;
     }
     
     .reset-btn {
         top: 10px;
         right: 10px;
-        padding: 5px 10px;
-        font-size: 0.7rem;
+        padding: 4px 8px;
+        font-size: 0.65rem;
     }
 
     .editor-area {
         padding: 10px;
-        font-size: 12px;
+        font-size: 11px;
+        flex: 1;
+        min-height: 0;
     }
     
     .interactive-input {
-        font-size: 12px;
-        width: 60px;
+        font-size: 11px;
+        width: 50px;
     }
     .interactive-input:focus {
-        width: 80px;
+        width: 70px;
+    }
+    
+    .terminal-header {
+        padding: 5px 10px;
+        font-size: 10px;
+        min-height: 25px;
     }
 }
