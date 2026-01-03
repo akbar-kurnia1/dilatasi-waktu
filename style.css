@@ -20,6 +20,7 @@ body {
     overflow: hidden;
     display: flex;
     height: 100vh;
+    height: 100dvh;
 }
 
 .visual-panel {
@@ -349,14 +350,14 @@ input[type=range]::-webkit-slider-thumb {
     }
 
     .visual-panel {
-        flex: 5;
+        flex: 7;
         width: 100%;
         border-right: none;
         border-bottom: 3px solid #333;
     }
 
     .terminal-panel {
-        flex: 4;
+        flex: 3;
         width: 100%;
     }
 
