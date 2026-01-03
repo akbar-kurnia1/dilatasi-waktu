@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulasi Dilatasi Waktu - Akbar Kurniawan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="visual-panel" id="spaceArea">
+        <div class="stars" id="starField"></div>
+        <div class="center-warning" id="centerWarning">
+            <h2>Benda bermassa tidak seharusnya mencapai kecepatan ini</h2>
+            <p>(Cahaya tidak memiliki massa)</p>
+        </div>
+        <button class="reset-btn" onclick="resetSimulasi()">
+            <i class="fas fa-undo"></i> RESET WAKTU
+        </button>
+        <div class="ship-container">
+            <i class="fas fa-space-shuttle spaceship"></i>
+            <div class="engine-flame" id="engineFlame"></div>
+        </div>
+        <div class="hud-bottom">
+            <div class="clock-card">
+                <div class="label-time">PENGAMAT (BUMI)</div>
+                <div class="clock-face">
+                    <div class="hand" id="earthHand"></div>
+                </div>
+                <div class="digital-time" id="earthDigital">00:00:00</div>
+            </div>
+            <div class="diff-card">
+                <div class="label-time" style="color:var(--accent-yellow)">SELISIH (Δt)</div>
+                <div class="diff-value" id="diffDisplay">00:00:00</div>
+            </div>
+            <div class="clock-card" id="astroCard" style="border-color: var(--accent-pink);">
+                <div class="label-time">ASTRONOT (PESAWAT)</div>
+                <div class="clock-face" style="border-color: var(--accent-pink);">
+                    <div class="hand" id="astroHand" style="background: var(--accent-cyan);"></div>
+                </div>
+                <div class="digital-time" id="astroDigital" style="color: var(--accent-pink);">00:00:00</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="terminal-panel">
+        <div class="terminal-header">
+            <div class="window-controls">
+                <span style="background:#ff5f56;"></span>
+                <span style="background:#ffbd2e;"></span>
+                <span style="background:#27c93f;"></span>
+            </div>
+            <span>UAS_Akbar_Kurniawan.cpp</span>
+            <span>C++</span>
+        </div>
+
+        <div class="editor-area">
+            <div class="code-content">
+                <span class="com">// Nama: Akbar Kurniawan</span><br>
+                <span class="com">// NIM: 08021282328046</span><br>
+                <span class="com">#include &lt;iostream&gt;</span><br>
+                <span class="com">#include &lt;cmath&gt;</span><br>
+                <span class="kwd">using namespace</span> std;<br><br>
+
+                <span class="kwd">int</span> main() {<br>
+                &nbsp;&nbsp;<span class="kwd">double</span> t_aksen, v;<br><br>
+                
+                &nbsp;&nbsp;<span class="com">// --- INPUT PENGGUNA ---</span><br>
+                &nbsp;&nbsp;cout << <span class="str">"Masukkan jarak t' (tahun cahaya): "</span>;<br>
+                &nbsp;&nbsp;cin >> <input type="number" id="inputT" class="interactive-input" value="10" min="1">;<br><br>
+
+                &nbsp;&nbsp;cout << <span class="str">"Masukkan kecepatan v (0.0 - 1.0c): "</span>;<br>
+                &nbsp;&nbsp;cin >> <input type="number" id="inputVText" class="interactive-input" value="0.000" min="0" max="1.000" step="0.001">;<br>
+                &nbsp;&nbsp;<input type="range" id="inputV" min="0" max="1.000" step="0.001" value="0.000"><br><br>
+
+                &nbsp;&nbsp;<span class="kwd">double</span> c = <span class="num">1.0</span>;<br>
+                &nbsp;&nbsp;<span class="kwd">double</span> t = t_aksen * sqrt(<span class="num">1</span> - (v*v)/(c*c));<br><br>
+
+                &nbsp;&nbsp;<span class="com">// --- OUTPUT HASIL ---</span><br>
+                &nbsp;&nbsp;<div class="console-output" id="consoleOutput">
+                    Menunggu input...
+                  </div>
+                <br>
+                &nbsp;&nbsp;<span class="kwd">return</span> <span class="num">0</span>;<br>
+                }
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
