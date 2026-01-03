@@ -19,8 +19,8 @@ body {
     font-family: 'Orbitron', sans-serif;
     overflow: hidden;
     display: flex;
-    height: 100vh;
-    height: 100dvh;
+    height: 100vh; /* Fallback */
+    height: 100dvh; /* Untuk browser mobile modern */
 }
 
 .visual-panel {
@@ -350,20 +350,21 @@ input[type=range]::-webkit-slider-thumb {
     }
 
     .visual-panel {
-        flex: 7;
+        flex: 8;
         width: 100%;
         border-right: none;
         border-bottom: 3px solid #333;
     }
 
     .terminal-panel {
-        flex: 3;
+        flex: 2;
         width: 100%;
     }
 
     .ship-container {
         width: 100px;
         height: 140px;
+        top: 40%;
     }
     .spaceship {
         font-size: 5rem;
